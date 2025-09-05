@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:thirdplace}
+    username: ${DB_USER:thirdplace}
+    password: ${DB_PASSWORD:thirdplace}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate # or 'none' if you don't want schema check yet
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc.lob.non_contextual_creation: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    org.hibernate.SQL: warn
