@@ -52,7 +52,7 @@ curl -s http://localhost:8080/actuator/health
 4. **Frontend**
 
 ```bash
-cd frontend && pnpm install && pnpm dev
+cd frontend && npm install && npm run dev
 # visit http://localhost:3000
 
 ```
